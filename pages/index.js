@@ -40,7 +40,7 @@ export default function Home(designs) {
         <div className={styles.categories}>
           <Carousel />
         </div>
-        <div>
+        <div className={styles.grid__layout}>
           {designs &&
             designs.designs &&
             designs.designs.length > 0 &&
@@ -50,6 +50,9 @@ export default function Home(designs) {
                   key={design.slug + "..." + index}
                   title={design.title}
                   slug={design.slug}
+                  description={design.description}
+                  coverPhoto={design.coverPhoto}
+                  author={design.author}
                 />
               );
             })}

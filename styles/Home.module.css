@@ -15,3 +15,10 @@
   color: rgba(0, 0, 0, 0.7);
   font-weight: 600;
 }
+
+.grid__layout {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}

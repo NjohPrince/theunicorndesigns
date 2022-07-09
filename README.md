@@ -32,7 +32,7 @@
 
 - Create a relationship between Design and Author
 
-- Under your project setting on the [GraphCMS Platform](https://graphcms.com/) migrate to the `API Access ` tab
+- Under your project setting on the [GraphCMS Platform](https://graphcms.com/) migrate to the `API Access` tab
 - Copy your content API URL and paste in the `.env.local` file within the root of the cloned/downloaded project.
   => Use the format `NEXT_PUBLIC_GRAPHCMS_URL="PASTE_API_URL_HERE"`
 
