@@ -22,3 +22,11 @@ export const queryDesigns = gql`
     }
   }
 `;
+
+export const queryCategories = gql`
+  {
+    categories {
+      label
+    }
+  }
+`;

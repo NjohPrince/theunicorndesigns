@@ -16,11 +16,15 @@
 }
 
 .card .image {
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   overflow: -moz-hidden-unscrollable;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(199, 199, 199, 0.1);
   border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.8rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .card .image img {

@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import styles from "./carousel.module.css";
 
 // dummy_data
-import { Categories } from "../../dummy_data/Categories";
+// import { Categories } from "../../dummy_data/Categories";
 
-const Carousel = () => {
+const Carousel = ({ categories }) => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
@@ -28,12 +28,12 @@ const Carousel = () => {
           className={styles.inner__carousel}
           whileTap={{ cursor: "grabbing" }}
         >
-          {Categories &&
-            Categories.length > 0 &&
-            Categories.map((category, index) => {
+          {categories &&
+            categories.length > 0 &&
+            categories.map((category, index) => {
               return (
                 <motion.div
-                  key={category.name + "..." + index}
+                  key={category.label + "..." + index}
                   className={styles.carousel__item}
                 >
                   <button
@@ -41,7 +41,7 @@ const Carousel = () => {
                       console.log("Item Clicked!");
                     }}
                   >
-                    {category.name}
+                    {category.label}
                   </button>
                 </motion.div>
               );

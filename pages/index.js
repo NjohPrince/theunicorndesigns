@@ -1,10 +1,11 @@
 import Head from "next/head";
+import { useCallback, useEffect, useState } from "react";
 
 // configs
 import { APIConfig } from "../configs/apiConfig";
 
 // queries
-import { queryDesigns } from "../queries/Queries";
+import { queryDesigns, queryCategories } from "../queries/Queries";
 
 // home styles
 import styles from "../styles/Home.module.css";
@@ -16,6 +17,26 @@ import Carousel from "../components/carousel/Carousel.component";
 import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
+  const [categories, setCategories] = useState();
+  const fetchCategories = useCallback(async () => {
+    try {
+      const data = await APIConfig.graphcms.request(queryCategories);
+      setCategories(data.categories);
+    } catch (error) {
+      console.log(error);
+      if (error.message) {
+        console.log(error.message);
+      }
+      // if (error.response) {
+      //   console.log(error.response);
+      // }
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchCategories();
+  }, [fetchCategories]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +57,7 @@ export default function Home(designs) {
           <input name="search" type="search" placeholder="Search designs..." />
         </div>
         <div className={styles.categories}>
-          <Carousel />
+          <Carousel categories={categories} />
         </div>
         <div className={styles.grid__layout}>
           {designs &&
