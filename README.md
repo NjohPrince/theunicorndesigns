@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## TheUnicornDesigns
 
-## Getting Started
+- Platform to showcase your products/ skills/designs
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- NextJS (React framework for production)
+- ReactJS (JavaScript Library)
+- GraphCMS (Content management and structuring)
+- Graphql
+- Graphql-request
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Why NextJS
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Next.js is an open-source development framework built on top of Node.js
+enabling React based web applications functionalities such as server-side 
+rendering and generating static websites.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### What NextJS Gives
+- Rich user experience (easier and faster)
+- Outstanding performance (also easier and faster)
+- Rapid feature development
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Why GraphCMS
 
-## Learn More
+- GraphCMS is the ultimate content platform that enables you to deliver ambitious applications at scale, API first, using your preferred frameworks.
+- Build your production-ready Content API within minutes.
+    
+    => [Read More Here](https://graphcms.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## GraphQL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    => [Read More Here](https://graphql.org/)
 
-## Deploy on Vercel
+## graphql-request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- graphql-request is the most minimal and simplest to use GraphQL client.
