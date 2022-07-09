@@ -36,7 +36,13 @@ const Carousel = () => {
                   key={category.name + "..." + index}
                   className={styles.carousel__item}
                 >
-                  <button>{category.name}</button>
+                  <button
+                    onClick={() => {
+                      console.log("Item Clicked!");
+                    }}
+                  >
+                    {category.name}
+                  </button>
                 </motion.div>
               );
             })}

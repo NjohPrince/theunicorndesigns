@@ -25,7 +25,6 @@
 .carousel__item button {
   width: 100%;
   border-radius: 5px;
-  pointer-events: none;
   padding: 0.6rem 3rem;
   display: flex;
   display: -ms-flexbox;
@@ -38,4 +37,14 @@
   font-size: 17px;
   color: teal;
   white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+}
+
+.carousel__item button:hover,
+.carousel__item button:focus-within {
+  background: teal;
+  color: #fff;
+  border-color: teal;
 }
