@@ -1,11 +1,10 @@
 import Head from "next/head";
-import { gql } from "graphql-request";
 
 // configs
-import { APIConfig } from "../configs/apiConfig";
+// import { APIConfig } from "../configs/apiConfig";
 
 // queries
-import { queryDesigns } from "../queries/Queries";
+// import { queryDesigns } from "../queries/Queries";
 
 // home styles
 import styles from "../styles/Home.module.css";
@@ -17,7 +16,7 @@ import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
   // logging our designs unto the console
-  console.log(designs.designs);
+  // console.log(designs.designs);
 
   return (
     <div className={styles.container}>
@@ -34,7 +33,8 @@ export default function Home(designs) {
 
       <Navbar />
       <div className={styles.main}>
-        {designs.designs &&
+        {designs &&
+          designs.designs &&
           designs.designs.length > 0 &&
           designs.designs.map((design, index) => {
             return (
@@ -52,13 +52,13 @@ export default function Home(designs) {
 }
 
 // generating static pages for our content received from GraphCMS
-export async function getStaticProps() {
-  const { designs } = await APIConfig.graphcms.request(queryDesigns);
-  return {
-    props: {
-      designs,
-    },
-    // update display content, regnerating static content after 20 seconds
-    // revalidate: 20,
-  };
-}
+// export async function getStaticProps() {
+//   const { designs } = await APIConfig.graphcms.request(queryDesigns);
+//   return {
+//     props: {
+//       designs,
+//     },
+//     // update display content, regnerating static content after 20 seconds
+//     // revalidate: 20,
+//   };
+// }
