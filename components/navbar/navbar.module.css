@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 4vw;
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+  background: var(--bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+}
+
+.navbar .logo h2 {
+  font-family: "Petit Formal Script", cursive;
+  font-weight: bold;
+  color: teal;
+  margin: 0.6rem 0;
+  margin-right: 2rem;
+}
+
+.navbar .menu {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.navbar .menu li:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+.navbar .menu li a {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+}
+
+.navbar .menu li a:hover,
+.navbar .menu li a:focus-within {
+  color: teal;
+}

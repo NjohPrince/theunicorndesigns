@@ -9,6 +9,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   line-height: 1.5;
+  font-weight: normal;
 }
 
 :root {
