@@ -37,3 +37,11 @@ rendering and generating static websites.
 ## graphql-request
 
 - graphql-request is the most minimal and simplest to use GraphQL client.
+
+## Use Cases of This Application
+
+- Blog Post
+- News Feeds
+- Showcasing your skills and works
+- Company products showcasing
+- Grouping chat messages by time sent and target authors of threads (tracking and monitoring messages)

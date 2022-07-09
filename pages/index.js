@@ -8,18 +8,18 @@ const graphcms = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHQL_URL);
 const queryDesigns = gql`
   {
     designs {
-      id,
-      title,
-      slug,
+      id
+      title
+      slug
       description {
         html
-      },
+      }
       author {
-        name,
+        name
         avatar {
           url
         }
-      },
+      }
       coverPhoto {
         url
       }
@@ -30,9 +30,12 @@ const queryDesigns = gql`
 // home styles
 import styles from "../styles/Home.module.css";
 
+// design component
+import DesignComponent from "../components/Design.component";
+
 export default function Home(designs) {
   // logging our designs unto the console
-  console.log(designs);
+  console.log(designs.designs);
 
   return (
     <div className={styles.container}>
@@ -48,13 +51,14 @@ export default function Home(designs) {
       </Head>
 
       <div className={styles.main}>
-        {designs &&
-          designs.length > 0 &&
-          designs.map((design, index) => {
+        {designs.designs &&
+          designs.designs.length > 0 &&
+          designs.designs.map((design, index) => {
             return (
-              <div>
-                <h2>{design.title}</h2>
-              </div>
+              <DesignComponent
+                key={design.slug + "..." + index}
+                title={design.title}
+              />
             );
           })}
       </div>
@@ -70,6 +74,6 @@ export async function getStaticProps() {
       designs,
     },
     // update display content, regnerating static content after 20 seconds
-    revalidate: 20,
+    // revalidate: 20,
   };
 }
