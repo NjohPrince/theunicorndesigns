@@ -12,6 +12,7 @@ import styles from "../styles/Home.module.css";
 // components
 import Navbar from "../components/navbar/Navbar.component";
 import Footer from "../components/footer/Footer.component";
+import Carousel from "../components/carousel/Carousel.component";
 import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
@@ -37,7 +38,7 @@ export default function Home(designs) {
           <h2>My Designs and Creations</h2>
         </div>
         <div className={styles.categories}>
-
+          <Carousel />
         </div>
         <div>
           {designs &&
@@ -61,10 +62,25 @@ export default function Home(designs) {
 
 // generating static pages for our content received from GraphCMS
 export async function getStaticProps() {
-  const { designs } = await APIConfig.graphcms.request(queryDesigns);
+  let designs = [];
+
+  try {
+    const data = await APIConfig.graphcms.request(queryDesigns);
+    designs = data;
+  } catch (error) {
+    console.log(error);
+    if (error.message) {
+      console.log(error.message);
+    }
+    // if (error.response) {
+    //   console.log(error.response);
+    // }
+  }
+
+  // will be received within out index.js as props
   return {
     props: {
-      designs,
+      ...designs,
     },
     // update display content, regnerating static content after 20 seconds
     // revalidate: 20,
