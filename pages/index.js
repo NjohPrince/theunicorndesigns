@@ -31,7 +31,7 @@ const queryDesigns = gql`
 import styles from "../styles/Home.module.css";
 
 // design component
-import DesignComponent from "../components/Design.component";
+import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
   // logging our designs unto the console
