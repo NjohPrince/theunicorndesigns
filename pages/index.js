@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 
 // instantiating our GraphQLClient
-const graphcms = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHQL_URL);
+const graphcms = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_URL);
 
 // create a query
 const queryDesigns = gql`
