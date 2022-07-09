@@ -5,7 +5,13 @@ import PropTypes from "prop-types";
 // stylesheet
 import styles from "./designcard.module.css";
 
-const DesignComponent = ({ title, slug, description, author, coverPhoto }) => {
+const DesignComponent = ({
+  title,
+  slug,
+  datePublished,
+  author,
+  coverPhoto,
+}) => {
   return (
     <>
       {/** a design is considered to be an article */}
@@ -29,6 +35,11 @@ const DesignComponent = ({ title, slug, description, author, coverPhoto }) => {
                 <img src={author.avatar.url} alt={author.name} />
               </div>
               <h4>{author.name}</h4>
+            </div>
+
+            <div className={styles.date}>
+              <div></div>
+              <h4>Date Published: {datePublished}</h4>
             </div>
           </div>
         </article>

@@ -3,7 +3,7 @@
   display: -ms-flexbox;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 4vw;
+  padding: 1.2rem 4vw;
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
   background: var(--bg-color);

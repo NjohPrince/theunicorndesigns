@@ -6,6 +6,7 @@ export const queryDesigns = gql`
       id
       title
       slug
+      datePublished
       description {
         html
       }

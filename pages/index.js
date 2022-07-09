@@ -51,6 +51,7 @@ export default function Home(designs) {
                   description={design.description}
                   coverPhoto={design.coverPhoto}
                   author={design.author}
+                  datePublished={design.datePublished}
                 />
               );
             })}

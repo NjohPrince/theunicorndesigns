@@ -49,10 +49,30 @@
   align-items: center;
 }
 
+.card .design__author h4 {
+  font-weight: 500;
+}
+
 .card .design__author img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-right: 0.8rem;
+}
+
+.card .date {
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+.card .date h4 {
+  padding: 0.3rem 0.8rem;
+  background: teal;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
 }
