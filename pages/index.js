@@ -30,7 +30,9 @@ const queryDesigns = gql`
 // home styles
 import styles from "../styles/Home.module.css";
 
-// design component
+// components
+import Navbar from "../components/navbar/Navbar.component";
+import Footer from "../components/footer/Footer.component";
 import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
@@ -50,6 +52,7 @@ export default function Home(designs) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <div className={styles.main}>
         {designs.designs &&
           designs.designs.length > 0 &&
@@ -58,10 +61,12 @@ export default function Home(designs) {
               <DesignComponent
                 key={design.slug + "..." + index}
                 title={design.title}
+                slug={design.slug}
               />
             );
           })}
       </div>
+      <Footer />
     </div>
   );
 }
