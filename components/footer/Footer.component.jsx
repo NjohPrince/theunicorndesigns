@@ -16,7 +16,9 @@ const Footer = () => {
             <a href="https://twitter.com/NjohNoh">Twitter</a>
           </div>
           <div className={styles.icon}>
-            <a href="https://linkedin.com/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/njoh-noh-prince-junior-b93347201/">
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

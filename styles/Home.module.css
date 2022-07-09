@@ -2,8 +2,16 @@
   min-height: 100vh;
   max-width: 100%;
   padding: 2rem 4vw;
+  padding-top: 8rem;
   display: flex;
   display: -ms-flexbox;
   flex-direction: column;
   -ms-flex-direction: column;
+}
+
+.main .title h2 {
+  margin-bottom: 2rem;
+  font-size: 45px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
 }
