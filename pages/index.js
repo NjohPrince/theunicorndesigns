@@ -4,28 +4,8 @@ import { gql } from "graphql-request";
 // configs
 import { APIConfig } from "../configs/apiConfig";
 
-// create a query
-const queryDesigns = gql`
-  {
-    designs {
-      id
-      title
-      slug
-      description {
-        html
-      }
-      author {
-        name
-        avatar {
-          url
-        }
-      }
-      coverPhoto {
-        url
-      }
-    }
-  }
-`;
+// queries
+import { queryDesigns } from "../queries/Queries";
 
 // home styles
 import styles from "../styles/Home.module.css";
