@@ -39,14 +39,14 @@ DesignComponent.propTypes = {
 
   // use this when the structure of the data is known ahead of time
   author: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     avatar: PropTypes.shape({
-      url: PropTypes.string.isRequired,
+      url: PropTypes.string,
     }),
-  }),
+  }).isRequired,
   coverPhoto: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-  }),
+    url: PropTypes.string,
+  }).isRequired,
 };
 
 export default DesignComponent;

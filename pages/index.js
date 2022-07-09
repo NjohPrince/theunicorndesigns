@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { GraphQLClient, gql } from "graphql-request";
+import { gql } from "graphql-request";
 
-// instantiating our GraphQLClient
-const graphcms = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_URL);
+// configs
+import { APIConfig } from "../configs/apiConfig";
 
 // create a query
 const queryDesigns = gql`
@@ -73,7 +73,7 @@ export default function Home(designs) {
 
 // generating static pages for our content received from GraphCMS
 export async function getStaticProps() {
-  const { designs } = await graphcms.request(queryDesigns);
+  const { designs } = await APIConfig.graphcms.request(queryDesigns);
   return {
     props: {
       designs,
