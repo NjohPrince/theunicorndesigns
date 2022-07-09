@@ -30,11 +30,11 @@
 }
 
 .navbar .menu li:not(:last-of-type) {
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 
 .navbar .menu li a {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.4);
   transition: 0.2s ease-in-out;

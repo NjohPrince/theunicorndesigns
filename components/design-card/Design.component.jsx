@@ -18,9 +18,10 @@ const DesignComponent = ({ title, slug, description, author, coverPhoto }) => {
           <div className={styles.body}>
             <div className={styles.design__data}>
               <h3 className={styles.title}>{title}</h3>
-              {/* <div className={styles.description}>
+              {/* <div
                 dangerouslySetInnerHTML={{ __html: description.html }}
-              </div> */}
+                className={styles.description}
+              ></div> */}
             </div>
 
             <div className={styles.design__author}>

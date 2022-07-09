@@ -16,9 +16,6 @@ import Carousel from "../components/carousel/Carousel.component";
 import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
-  // logging our designs unto the console
-  console.log(designs.designs);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -36,6 +33,7 @@ export default function Home(designs) {
       <div className={styles.main}>
         <div className={styles.title}>
           <h2>My Designs and Creations</h2>
+          <input name="search" type="search" placeholder="Search designs..." />
         </div>
         <div className={styles.categories}>
           <Carousel />
