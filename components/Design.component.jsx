@@ -31,9 +31,13 @@ DesignComponent.defaultProps = {
 DesignComponent.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+
   // use this when the structure of the data is known ahead of time
   author: PropTypes.shape({
-    url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }),
   }),
   coverPhoto: PropTypes.shape({
     url: PropTypes.string.isRequired,
