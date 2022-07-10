@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
+import Image from "next/image";
 
 // stylesheet
 import styles from "./designcard.module.css";
@@ -18,7 +19,14 @@ const DesignComponent = ({
       <Link href={`/designs/${slug}`}>
         <article className={styles.card}>
           <div className={styles.image}>
-            <img src={coverPhoto.url} alt={title} />
+            <Image
+              priority
+              width="100%"
+              height="100%"
+              layout="responsive"
+              src={coverPhoto.url}
+              alt={title}
+            />
           </div>
 
           <div className={styles.body}>
@@ -32,7 +40,14 @@ const DesignComponent = ({
 
             <div className={styles.design__author}>
               <div className={styles.profile}>
-                <img src={author.avatar.url} alt={author.name} />
+                <img
+                  priority
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  src={author.avatar.url}
+                  alt={author.name}
+                />
               </div>
               <h4>{author.name}</h4>
             </div>

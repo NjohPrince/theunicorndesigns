@@ -106,6 +106,6 @@ export async function getStaticProps() {
       ...designs,
     },
     // update display content, regnerating static content after 20 seconds
-    // revalidate: 20,
+    revalidate: 30,
   };
 }

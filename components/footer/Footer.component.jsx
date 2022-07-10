@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__content}>
-        <h4>Let's Connect</h4>
+        <h4>Let&apos;s Connect</h4>
         <div className={styles.social__links}>
           <div className={styles.icon}>
             <a rel="noreferrer" target="_blank" href="https://github.com/NjohPrince">Github</a>
