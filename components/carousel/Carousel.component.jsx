@@ -19,6 +19,8 @@ const Carousel = ({ categories }) => {
     return () => {};
   }, []);
 
+  console.log(width);
+
   return (
     <div className={styles.container}>
       <motion.div ref={carousel} className={styles.carousel__wrapper}>
@@ -37,7 +39,8 @@ const Carousel = ({ categories }) => {
                   className={styles.carousel__item}
                 >
                   <button
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.preventDefault();
                       console.log("Item Clicked!");
                     }}
                   >

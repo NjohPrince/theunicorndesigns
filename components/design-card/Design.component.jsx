@@ -20,7 +20,7 @@ const DesignComponent = ({
         <article className={styles.card}>
           <div className={styles.image}>
             <Image
-              priority
+              priority="true"
               width="100%"
               height="100%"
               layout="responsive"
@@ -41,7 +41,7 @@ const DesignComponent = ({
             <div className={styles.design__author}>
               <div className={styles.profile}>
                 <img
-                  priority
+                  priority="true"
                   width="100%"
                   height="100%"
                   layout="responsive"
