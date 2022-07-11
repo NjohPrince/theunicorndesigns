@@ -18,6 +18,8 @@ import DesignComponent from "../components/design-card/Design.component";
 
 export default function Home(designs) {
   const [categories, setCategories] = useState();
+  const [searchResults, setSearchResults] = useState([]);
+
   const fetchCategories = useCallback(async () => {
     try {
       const data = await APIConfig.graphcms.request(queryCategories);
@@ -37,6 +39,29 @@ export default function Home(designs) {
     fetchCategories();
   }, [fetchCategories]);
 
+  const [search, setSearch] = useState("");
+
+  const runSearch = () => {
+    let newlyFilteredArray = [];
+    setSearchResults([]);
+
+    const designsArray = designs?.designs;
+    // console.log("Designs: ", designsArray);
+
+    newlyFilteredArray = designsArray.filter((design) =>
+      design.title.toLowerCase().includes(search.toLowerCase())
+    );
+    setSearchResults(newlyFilteredArray);
+  };
+
+  useEffect(() => {
+    if (search.length > 0) {
+      runSearch();
+    } else {
+      setSearchResults([]);
+    }
+  }, [search]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -54,29 +79,56 @@ export default function Home(designs) {
       <div className={styles.main}>
         <div className={styles.title}>
           <h2>My Designs and Creations</h2>
-          <input name="search" type="search" placeholder="Search designs..." />
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value.toString())}
+            name="search"
+            type="search"
+            placeholder="Search designs..."
+          />
         </div>
         <div className={styles.categories}>
           <Carousel categories={categories} />
         </div>
-        <div className={styles.grid__layout}>
-          {designs &&
-            designs.designs &&
-            designs.designs.length > 0 &&
-            designs.designs.map((design, index) => {
-              return (
-                <DesignComponent
-                  key={design.slug + "..." + index}
-                  title={design.title}
-                  slug={design.slug}
-                  description={design.description}
-                  coverPhoto={design.coverPhoto}
-                  author={design.author}
-                  datePublished={design.datePublished}
-                />
-              );
-            })}
-        </div>
+        {searchResults.length > 0 ? (
+          <div className={styles.grid__layout}>
+            {searchResults &&
+              searchResults &&
+              searchResults.length > 0 &&
+              searchResults.map((design, index) => {
+                return (
+                  <DesignComponent
+                    key={design.slug + "..." + index}
+                    title={design.title}
+                    slug={design.slug}
+                    description={design.description}
+                    coverPhoto={design.coverPhoto}
+                    author={design.author}
+                    datePublished={design.datePublished}
+                  />
+                );
+              })}
+          </div>
+        ) : (
+          <div className={styles.grid__layout}>
+            {designs &&
+              designs.designs &&
+              designs.designs.length > 0 &&
+              designs.designs.map((design, index) => {
+                return (
+                  <DesignComponent
+                    key={design.slug + "..." + index}
+                    title={design.title}
+                    slug={design.slug}
+                    description={design.description}
+                    coverPhoto={design.coverPhoto}
+                    author={design.author}
+                    datePublished={design.datePublished}
+                  />
+                );
+              })}
+          </div>
+        )}
       </div>
       <Footer />
     </div>
