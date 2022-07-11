@@ -9,7 +9,7 @@
 
 - Create an account on the [GraphCMS Platform](https://graphcms.com/)
 - Create a project
-- Create the Schemas `Design and Author` and create the following fields/attributes:
+- Create the Schemas `Design, Categories and Author` and create the following fields/attributes:
 
 ```gql
   designs {
@@ -30,7 +30,15 @@
   }
 ```
 
+```gql
+  categories {
+    label
+  }
+```
+
 - Create a relationship between Design and Author
+
+- Create a relationship between Design and Category (PS: Make this two way)
 
 - Under your project setting on the [GraphCMS Platform](https://graphcms.com/) migrate to the `API Access` tab
 - Copy your content API URL and paste in the `.env.local` file within the root of the cloned/downloaded project.
