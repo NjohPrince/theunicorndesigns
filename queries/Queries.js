@@ -7,9 +7,6 @@ export const queryDesigns = gql`
       title
       slug
       datePublished
-      description {
-        html
-      }
       author {
         name
         avatar {
@@ -27,6 +24,21 @@ export const queryCategories = gql`
   {
     categories {
       label
+      designscat {
+        id
+        title
+        slug
+        datePublished
+        author {
+          name
+          avatar {
+            url
+          }
+        }
+        coverPhoto {
+          url
+        }
+      }
     }
   }
 `;

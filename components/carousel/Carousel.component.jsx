@@ -7,7 +7,7 @@ import styles from "./carousel.module.css";
 // dummy_data
 // import { Categories } from "../../dummy_data/Categories";
 
-const Carousel = ({ categories }) => {
+const Carousel = ({ categories, filter }) => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
@@ -18,8 +18,6 @@ const Carousel = ({ categories }) => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     return () => {};
   }, []);
-
-  console.log(width);
 
   return (
     <div className={styles.container}>
@@ -38,12 +36,7 @@ const Carousel = ({ categories }) => {
                   key={category.label + "..." + index}
                   className={styles.carousel__item}
                 >
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log("Item Clicked!");
-                    }}
-                  >
+                  <button id={category.label} onClick={filter}>
                     {category.label}
                   </button>
                 </motion.div>

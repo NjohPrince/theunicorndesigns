@@ -16,6 +16,9 @@ import Footer from "../components/footer/Footer.component";
 import Carousel from "../components/carousel/Carousel.component";
 import DesignComponent from "../components/design-card/Design.component";
 
+// filters
+import { runSearch, filterByCategory } from "../filters/Filters";
+
 export default function Home(designs) {
   const [categories, setCategories] = useState();
   const [searchResults, setSearchResults] = useState([]);
@@ -23,6 +26,7 @@ export default function Home(designs) {
   const fetchCategories = useCallback(async () => {
     try {
       const data = await APIConfig.graphcms.request(queryCategories);
+      console.log(data.categories);
       setCategories(data.categories);
     } catch (error) {
       console.log(error);
@@ -41,26 +45,21 @@ export default function Home(designs) {
 
   const [search, setSearch] = useState("");
 
-  const runSearch = () => {
-    let newlyFilteredArray = [];
-    setSearchResults([]);
-
-    const designsArray = designs?.designs;
-    // console.log("Designs: ", designsArray);
-
-    newlyFilteredArray = designsArray.filter((design) =>
-      design.title.toLowerCase().includes(search.toLowerCase())
-    );
-    setSearchResults(newlyFilteredArray);
-  };
-
   useEffect(() => {
     if (search.length > 0) {
-      runSearch();
+      setSearchResults(runSearch(designs?.designs, search));
     } else {
       setSearchResults([]);
     }
   }, [search]);
+
+  const filterByCategoryFunc = (e) => {
+    // console.log("BTN_ID: ", e.target.id);
+
+    const data = filterByCategory(categories, e.target.id);
+    // console.log(data);
+    setSearchResults(data);
+  };
 
   return (
     <div className={styles.container}>
@@ -84,11 +83,11 @@ export default function Home(designs) {
             onChange={(e) => setSearch(e.target.value.toString())}
             name="search"
             type="search"
-            placeholder="Search designs..."
+            placeholder="Search designs by title..."
           />
         </div>
         <div className={styles.categories}>
-          <Carousel categories={categories} />
+          <Carousel categories={categories} filter={filterByCategoryFunc} />
         </div>
         {searchResults.length > 0 ? (
           <div className={styles.grid__layout}>
