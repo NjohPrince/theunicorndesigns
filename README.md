@@ -1,6 +1,6 @@
-## TheUnicornDesigns
+## TheUnicornDesigns -> [Live Link](https://theunicorndesigns.vercel.app/)
 
-- Platform to showcase your products/ skills/designs
+- Connecting GraphCMS with your Nextjs application --Guide to using GraphCMS
 
 ## Running Instructions
 
